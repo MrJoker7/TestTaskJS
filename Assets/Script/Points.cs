@@ -3,8 +3,13 @@ using UnityEngine.UI;
 
 public class Points : MonoBehaviour
 {
-    [SerializeField] private Text pointText;
+    private Text pointText;
     private int point;
+
+    private void Start()
+    {
+        pointText = GetComponent<Text>();
+    }
 
     public void WrongAnswer()
     {

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Exercise : MonoBehaviour
 {
-    private ExercisePart exercisePartOne;
-    private ExercisePart exercisePartTwo;
-    private Actions[] action;
+    private ExercisePart exercisePartOne = new ExercisePart();
+    private ExercisePart exercisePartTwo = new ExercisePart();
+    private Actions[] action = new Actions[3];
 
     private float answerInt;
     private int one;
@@ -56,18 +56,22 @@ public class Exercise : MonoBehaviour
     [Header("Необходимые ссылки")]
     [SerializeField] private UnknownPart unknown;
     [SerializeField] private ExerciseUI exerciseUI;
-
+    [SerializeField] private Answer answer;
     private void Start()
     {
         action[0] = new Addition();
         action[1] = new Subtraction();
         action[2] = new Multiplication();
+        CreateExercise();
     }
     public void CreateExercise()
     {
         randomAction = Random.Range(0, action.Length);
-        one = exercisePartOne.ExerciePartInt(5, 49);
-        two = exercisePartTwo.ExerciePartInt(5, 49);
+        ///<summary>
+        ///задал такой маленький диапазон, потому что при умножении получаются слишком большие числа
+        ///</summary>
+        one = exercisePartOne.ExerciePartInt(3, 9);
+        two = exercisePartTwo.ExerciePartInt(3, 9);
         answerInt = action[randomAction].Answer(one, two);
         UnknownPart();
     }
@@ -89,5 +93,6 @@ public class Exercise : MonoBehaviour
         }
         unknown.Init(unkownInt);
         exerciseUI.Init(AnswerStr(randUnkown));
+        answer.Init(unkownInt);
     }
 }

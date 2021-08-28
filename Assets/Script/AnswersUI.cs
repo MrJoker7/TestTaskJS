@@ -9,7 +9,7 @@ public class AnswersUI : MonoBehaviour
 
     public void Init(List<int> answers)
     {
-        for(int i = 0; i < answers.Count; i++)
+        for(int i = 0; i < answersText.Length; i++)
         {
             /// <summary>
             /// Поскольку правильный ответ присваивается последним, сделал рандомное присваивание, чтобы не прослеживалась  закономерность
