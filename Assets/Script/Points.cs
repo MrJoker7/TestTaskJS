@@ -14,12 +14,12 @@ public class Points : MonoBehaviour
     public void WrongAnswer()
     {
         point -= 5;
-        pointText.text = "Количество очков: " + point.ToString();
+        pointText.text = point.ToString();
     }
 
     public void CorectAnswer()
     {
         point += 10;
-        pointText.text = "Количество очков: " + point.ToString();
+        pointText.text = point.ToString();
     }
 }

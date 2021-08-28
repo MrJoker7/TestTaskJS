@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class HandlerAnswer : MonoBehaviour
 {
-    public static Action<int> EventAnswer;
+    public static Action<int,Image> EventAnswer;
+    [SerializeField]private Image baseBttn;
     public void chek()
     {
         ///<summary>
@@ -13,6 +14,6 @@ public class HandlerAnswer : MonoBehaviour
         ///но этот вариант мне показался более практичным
         ///</summary>
         int a = int.Parse(gameObject.GetComponent<Text>().text);
-        EventAnswer(a);
+        EventAnswer(a,baseBttn);
     }
 }

@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\ExerciseUI.cs" />
     <Compile Include="Assets\Script\HandlerAnswer.cs" />
     <Compile Include="Assets\Script\Points.cs" />
+    <Compile Include="Assets\Script\TimeGame.cs" />
     <Compile Include="Assets\Script\UnknownPart.cs" />
   </ItemGroup>
   <ItemGroup>
